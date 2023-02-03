@@ -1,4 +1,4 @@
-const students = [
+const studentsList1 = [
   {
     name: "Cesar",
     room: "Pantanal",
@@ -37,7 +37,7 @@ const students = [
 ];
 
 const consoleReport = () => {
-  students.forEach((student) => {
+  studentsList1.forEach((student) => {
     console.log("====================================");
     console.log(`Nome: ${student.name}`);
     console.log(`Sala: ${student.room}`);
@@ -48,9 +48,9 @@ const consoleReport = () => {
   });
 };
 
-const htmlReport = () => {
+const htmlStudentsList = () => {
   let listItem = "";
-  students.forEach((student) => {
+  studentsList1.forEach((student) => {
     listItem += `
     <li>
       <hr />
@@ -68,7 +68,7 @@ const htmlReport = () => {
 
 function showStudentsList() {
   consoleReport();
-  htmlReport();
+  htmlStudentsList();
 }
 
 // run exercice
