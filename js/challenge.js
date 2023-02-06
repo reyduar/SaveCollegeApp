@@ -24,13 +24,17 @@ const getStudentsAverage = () => {
 
 const getStudentsReport = () => {
   let report = "";
-  report += "==================================== \n";
-  newStudentsList.forEach((student) => {
-    report += `Nome: ${student?.name}  \n`;
-    report += `Note: ${student?.calification}  \n`;
-    report += "====================================  \n";
-  });
-  report += `A média das notas e: ${getStudentsAverage()}`;
+  if (!!newStudentsList.length) {
+    report += "==================================== \n";
+    newStudentsList.forEach((student) => {
+      report += `Nome: ${student?.name}  \n`;
+      report += `Note: ${student?.calification}  \n`;
+      report += "====================================  \n";
+    });
+    report += `A média das notas e: ${getStudentsAverage()}`;
+  } else {
+    report = "Nenhum aluno foi inserido";
+  }
 
   return report;
 };
