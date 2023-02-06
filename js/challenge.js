@@ -1,7 +1,7 @@
 const newStudentsList = [];
 
 const setStudentName = () => {
-  return prompt("Insira o nome do alumno ou fim para finalizar:");
+  return prompt("Insira o nome do alumno ou insira 'fim' para finalizar:");
 };
 
 const setStudentCalification = () => {
@@ -19,12 +19,6 @@ const getStudentsAverage = () => {
   newStudentsList.forEach((student) => {
     note += student.calification;
   });
-  console.log("====================================");
-  console.log(note);
-  console.log("====================================");
-  console.log("====================================");
-  console.log(total);
-  console.log("====================================");
   return note / total;
 };
 
