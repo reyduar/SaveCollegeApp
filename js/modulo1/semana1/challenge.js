@@ -41,15 +41,15 @@ const getStudentsReport = () => {
 
 function main() {
   const name = setStudentName();
-  if (name !== "fim") {
+  if (name === "fim" || name == null || name.length === 0) {
+    alert(getStudentsReport());
+  } else {
     const calification = setStudentCalification();
     const newStudent = {
       name: name || null,
       calification: parseInt(calification) || 0,
     };
     saveStudent(newStudent);
-  } else {
-    alert(getStudentsReport());
   }
 }
 
