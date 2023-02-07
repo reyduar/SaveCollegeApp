@@ -52,17 +52,18 @@ const getAverage = () => {
 };
 
 const htmlAverage = () => {
-  const avg = getAverage();
-
   const contenerApp = document.querySelector("#ex2");
-  contenerApp.innerHTML = `<p>Media da lista dos alunos: ${avg}</p>`;
+  contenerApp.innerHTML = `<p>Media da lista dos alunos: ${getAverage()}</p>`;
 };
 
-const printAverage = () => {
-  console.log("================Average=============");
-  console.log(getAverage());
+const consoleMediaReport = () => {
   console.log("====================================");
+  console.log(`Media da lista dos alunos: ${getAverage()}`);
+  console.log("====================================");
+};
+const printAverage = () => {
   htmlAverage();
+  consoleMediaReport();
 };
 // run exercise
 printAverage();

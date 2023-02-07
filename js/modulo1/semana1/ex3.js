@@ -41,9 +41,21 @@ const studentsList3 = [
   },
 ];
 
-const getStudentReport = (student) => {
-  const target = student.math > 7 ? "Aprovado" : "Reprovado";
+const getStudentResult = (student) => {
+  let target = "Reprovado";
+  if (student.math >= 7) {
+    target = "Aprovado";
+  }
   return `${student.name} -> ${target}`;
+};
+
+const consoleStudentReport = () => {
+  console.log("====================================");
+  studentsList3.forEach((student) => {
+    console.log(getStudentResult(student));
+  });
+  console.log();
+  console.log("====================================");
 };
 
 const htmlReport = () => {
@@ -52,7 +64,7 @@ const htmlReport = () => {
     listItem += `
     <li>
       <hr />
-      <p>${getStudentReport(student)}</p>
+      <p>${getStudentResult(student)}</p>
     </li>
     `;
   });
@@ -61,6 +73,7 @@ const htmlReport = () => {
 };
 
 const printStudentReport = () => {
+  consoleStudentReport();
   htmlReport();
 };
 // run exercise
