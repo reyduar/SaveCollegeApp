@@ -37,3 +37,8 @@ button:hover {
   max-width: 48rem;
   width: 90%;
 }
+
+.text-muted {
+  text-align: center;
+  color: #999;
+}
