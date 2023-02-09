@@ -3,6 +3,14 @@ const userTest = {
   password: "123",
 };
 
+const setUserInformation = (user) => {
+  localStorage.setItem("userCollege", JSON.stringify(user));
+};
+
+const getUserInformation = () => {
+  return JSON.parse(localStorage.getItem("userCollege"));
+};
+
 const fm = document.getElementById("loginForm");
 fm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -16,9 +24,24 @@ fm.addEventListener("submit", (e) => {
 
 const handleSubmit = ({ username, password }) => {
   if (userTest.username === username && userTest.password === password) {
+    setUserInformation({ username, password });
     alert("Logado");
     window.location.replace("https://reyduar.github.io/SaveCollegeApp/");
   } else {
     alert("Credenciais incorretas!");
   }
 };
+
+function login() {
+  const user = getUserInformation();
+  if (user) {
+    if (
+      userTest.username === user.username &&
+      userTest.password === user.password
+    ) {
+      window.location.replace("https://reyduar.github.io/SaveCollegeApp/");
+    }
+  }
+}
+
+login();
