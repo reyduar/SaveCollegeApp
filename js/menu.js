@@ -19,16 +19,16 @@ function menuOnclick(value) {
   document.querySelector(`#${value}`).style.display = "block";
 }
 const menu = () => {
-  const { username } = getUserInformation();
-  const userLogged = username
+  const user = getUserInformation();
+  const userLogged = user?.username
     ? `<h4>Usuário logado: ${username}</h4><br/>`
     : ``;
 
-  const buttonLogin = !username
+  const buttonLogin = !user?.username
     ? `<button type="button" onclick="goToLoginPage()">Login Page</button>`
     : ``;
 
-  const buttonLogout = username
+  const buttonLogout = user?.username
     ? `<button type="button" onclick="goToLoginPage()">Logout</button>`
     : ``;
   document.querySelector("#semana1").style.display = "block";
