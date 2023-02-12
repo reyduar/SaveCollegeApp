@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login</title>
+    <link href="../css/user.css" rel="stylesheet" />
+  </head>
+  <body>
+    <center><h1>Usuário</h1></center>
+    <form id="userForm">
+      <div class="container">
+        <div style="text-align: center">
+          <img
+            id="imgUser"
+            src=""
+            alt="usuario"
+            class="img"
+            onerror="this.src='../images/user.png';"
+          />
+        </div>
+        <label>Url*: </label>
+        <input
+          id="txtUrl"
+          type="text"
+          placeholder="Insira a Url da imagem"
+          name="url"
+          required
+        />
+        <label>Nome*: </label>
+        <input
+          id="txtName"
+          type="text"
+          placeholder="Insira o nome"
+          name="username"
+          required
+        />
+
+        <label>E-mail*: </label>
+        <input
+          id="txtEmail"
+          type="email"
+          placeholder="Insira o email"
+          name="email"
+          required
+        />
+        <button id="btnSalvar" type="submit">Salvar</button>
+      </div>
+    </form>
+    <script src="../js/modulo1/semana2/user.js"></script>
+  </body>
+</html>
